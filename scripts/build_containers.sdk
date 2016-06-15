@@ -12,7 +12,9 @@ set -o pipefail
 
 TOPDIR=`git rev-parse --show-toplevel`
 if [ "$TARGETS" = "" ]; then
-    TARGETS="aarch64 armv5e armv7a-neon mips64 core2-64 i586"
+#    TARGETS="aarch64 armv5e armv7a-neon mips64 core2-64 i586"
+#    armv7 json currently broken
+    TARGETS="aarch64 armv5e  mips64 core2-64 i586"
 fi
 if [ "$YP_RELEASE" = "" ]; then
     YP_RELEASE="2.1"
@@ -25,51 +27,17 @@ if [ "$DOCKERHUB_REPO" = "" ]; then
     DOCKERHUB_REPO="crops"
 fi
 
-# remove codi  image as we will rebuild it
-Q=`docker images  -q ${DOCKERHUB_REPO}/codi:${CROPS_RELEASE}`
-if [ "$Q"  != "" ]; then
-    echo "Removing codi image"
-    docker rmi -f $Q
-fi
-
-Q=`docker images  -q ${DOCKERHUB_REPO}/codi:${CROPS_RELEASE}debug`
-if [ "$Q"  != "" ]; then
-    echo "Removing codi debug image"
-    docker rmi -f $Q
-fi
-
-
 for target in $TARGETS; do
     # remove toolchain  image as we will rebuild it
-    Q=`docker images  -q ${DOCKERHUB_REPO}/toolchain-${target}:${RELEASE}`
+    Q=`docker images  -q ${DOCKERHUB_REPO}/toolchain-${target}:${YP_RELEASE}`
     if [ "$Q"  != "" ]; then
-	echo "Removing $target:$RELEASE toolchain image"
+	echo "Removing $target:$RELEASE toolchain image=$Q"
 	docker rmi -f   $Q
     fi
 done
 cd ${TOPDIR}/dockerfiles;
 
-# build codi
-Q=`docker images  -q codi:deps`
-if [ "$Q"  == "" ]; then
-    echo "Build CODI deps image"
-    docker build -t codi:deps -f Dockerfile.codi.deps  ..
-fi
-
-
-echo "Build CODI  image"
-docker build -t ${DOCKERHUB_REPO}/codi:${CROPS_RELEASE} -f Dockerfile.codi  ..
-
-echo "Build CODI debug  image"
-docker build -t ${DOCKERHUB_REPO}/codi:${CROPS_RELEASE}debug --build-arg build_type=debug -f Dockerfile.codi  ..
-
-Q=`docker images  -q toolchain:deps`
-if [ "$Q"  == "" ]; then
-    echo "Build toolchain deps image"
-    docker build -t toolchain:deps -f Dockerfile.toolchain.deps   ..
-fi
-
 for target in $TARGETS; do
     echo "Building $target:$RELEASE toolchain image "
-    docker build -t ${DOCKERHUB_REPO}/toolchain-${target}:${YP_RELEASE} -f Dockerfile.toolchain  --build-arg TARGET=${target} --build-arg RELEASE=${YP_RELEASE} ..
+    docker build -t ${DOCKERHUB_REPO}/toolchain-${target}:${YP_RELEASE} -f Dockerfile.sdk  --build-arg TARGET=${target} --build-arg RELEASE=${YP_RELEASE} ..
 done

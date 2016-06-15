@@ -1,3 +1,6 @@
 [submodule "base"]
 	path = base
 	url = https://github.com/crops/toolchain-base-container.git
+[submodule "crops-py"]
+	path = crops-py
+	url = https://github.com/crops/crops-py.git

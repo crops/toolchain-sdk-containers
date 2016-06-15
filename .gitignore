@@ -60,3 +60,10 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# submodules
+base/
+crops-py/
+
+# emacs
+*~
