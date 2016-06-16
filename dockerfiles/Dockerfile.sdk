@@ -1,0 +1,52 @@
+# This file describes the standard way to build a CROPS toolchain image
+#
+# Usage:
+#
+#
+# 2) Build your toolchain image with the following command replacing my_tag with your target arch
+# docker build -t crops/toolchain:my_tag -f Dockerfile.toolchain ../
+#
+# Example for i586 target:
+# docker build -t crops/toolchain-i586:2.1 -f Dockerfile.toolchain --build-arg TARGET=i586 --build-arg RELEASE=2.1 ../
+#
+# or scripts/build_containers.sdk will build all of them
+#
+
+FROM crops/toolchain-base
+MAINTAINER Todor Minchev <todor.minchev@linux.intel.com>
+
+ARG TARGET
+ARG RELEASE
+
+# Build and install TURFF
+RUN mkdir -p /usr/local/crops-py
+COPY crops-py/turff /usr/local/crops-py/turff
+COPY crops-py/launchers/turff-launcher.py /usr/local/crops-py/launchers/
+COPY crops-py/utils /usr/local/crops-py/utils
+COPY crops-py/README.rst /usr/local/crops-py/
+COPY crops-py/setup.py /usr/local/crops-py/
+
+
+RUN cd /usr/local/crops-py/ && \
+  pip3 install --upgrade pip && \
+  pip3 install -e . && \
+  pip3 install flask requests
+
+
+# Download and install toolchain
+RUN wget -q -P /tmp http://downloads.yoctoproject.org/releases/yocto/yocto-${RELEASE}/toolchain/x86_64/poky-glibc-x86_64-core-image-sato-${TARGET}-toolchain-${RELEASE}.sh && \
+	cd /tmp &&	\
+	chmod 755 ./poky-glibc-x86_64-core-image-sato-${TARGET}-toolchain-${RELEASE}.sh &&	\
+	./poky-glibc-x86_64-core-image-sato-${TARGET}-toolchain-${RELEASE}.sh -d /opt/poky -y && \
+	chmod 755 /opt/poky/environment-setup* && \
+	mkdir -p /opt/poky/.crops
+
+RUN wget -q -P /tmp  http://crops.github.io/toolchain-json/poky-glibc-x86_64-core-image-sato-${TARGET}-toolchain-${RELEASE}-json.sh && \
+    cd /tmp && \
+    chmod 755 poky-glibc-x86_64-core-image-sato-${TARGET}-toolchain-${RELEASE}-json.sh && \
+    ./poky-glibc-x86_64-core-image-sato-${TARGET}-toolchain-${RELEASE}-json.sh -d /opt/poky -y
+
+
+# Container entry point
+# start turff
+ENTRYPOINT ["python3","-m","launchers.turff-launcher"]
