@@ -41,11 +41,26 @@ class TestToolchainsRegistered(unittest.TestCase):
         self.codiPort=os.environ['CODI_PORT']
         self.dockerhubRepo=os.environ['DOCKERHUB_REPO']
         self.ypRelease=os.environ['YP_RELEASE']
+        print("pre run1\n")
+        cmd = "docker ps"
+        p=subprocess.Popen(cmd.split(), shell=False)
+        print("ppost run1\n")
+
         cmd = "docker  run -d -v /var/run/docker.sock:/var/run/docker.sock -p %s:%s  --name=crops-codi crops/codi" % \
               (self.codiPort,self.codiPort)
         p=subprocess.Popen(cmd.split(), shell=False)
+
         # getting rethinkdb and codi up can take a bit
         time.sleep(10)
+        print("pre run2\n")
+        cmd = "docker ps"
+        p=subprocess.Popen(cmd.split(),stderr=sys.stderr, stdout=sys.stdout,
+                        shell=False)
+        cmd = "docker images"
+        p=subprocess.Popen(cmd.split(),stderr=sys.stderr, stdout=sys.stdout,
+                        shell=False)
+        time.sleep(2)
+        print("post run2\n")
         self.targets = os.environ['TARGETS']
         self.toolchainContainers=[]
         for t in self.targets.split():

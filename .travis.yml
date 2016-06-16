@@ -10,13 +10,14 @@ services:
 env:
     global:
         - DOCKER_VERSION=1.10.1-0~trusty
-        - TARGETS="aarch64 armv5e  mips64 core2-64 i586"
+        - TARGETSREAL="aarch64 armv5e  mips64 core2-64 i586"
+        - TARGETS="i586"
         - YP_RELEASE=2.1
         - CROPS_RELEASE=latest
         - CODI_ADDR=localhost
         - CODI_PORT=10000
-        - secure: u6hdHQXI2rBjVSXoZ+l2drqxdMCPVcV1GjBK+Vnn3NKfCDyxaEVLs9jUrv3Vj7GMbA3lEqnAAHyGNc9StSj6kjiGynPOB5Odmgiw0JfoT1Uf2TLbK1KTJqKBgcUXnKXENaUo6NMkCbJGMGt3/cSrdSbeGbIcCyAXngNPIYc9gCkdtFlxUtgMHsDGbc4NnmOSRdRR5aXmfoU05Mx5UfAfqe5jIZEf34FO19dPTDL1iYAxpSca/FiImX/AWzwZ0aC5VttdSxUHitIbNkfBjcGLMLiGuApmmiNxbgRhZWXprQmc/SfhuYEJtInhRHSI1JyQRlAtnBbjrZvVmRjztMf32QtVamgko0zMOZwQmKyAUnJaRFYCt9uiQOK1sMlyvQxX0w5An76aHJLC9fqKjLs7LQmUcO+X2AYPlEz4zFMPHBSnmktqjqhfk/gt45BPJUlCOLHDQxoGUULkuEhVIqlSBRdmAyRWBwbnukMailFJQ708zfABRutqX5Vwq+KlRJR0oc9OujsYRv5/ozs/HSuAaX/zSEBn0hdyEafou1MyJ5JkLtq5FMNwC0WWtNtr8msJFLD3aeJgRzGjjyGd2t9Gab3husKqwc9OPU1biwteZOpWzISt/+HC0ZxlFug7WIcnnoBkNGHXNV/5zqgXj3fgQT4ZYMOEglltlorThpHsckc= # DOCKER_EMAIL_crops
-        - secure: lhlWLS6F8teB9QQDdByhgMYnzGol4SGFrdBG7VXA2ED4eb1TLtMqrSsNNN+IpAtJy6Wnalp9WY8gtsnTd6L8grc9OfrjMALHvfc9tx6+/jaO/PSx7fm4JUrfYTKXd5VwmuL8q6W2Vdf+fqLJwlrLHpfcYNEDP3YHfn3nyi48URnJn0vPgVVZpnQdKgM97S3vPHbEQ7ZZcs7s/WWKRKo03S0nqfGXPEVUN7r83AuOhX/V8k94V8H71HgQpF/QAhBEtrw+u7DuIu37oobGr4o8KOsfo5C+O1LIaWFietqgBc9oaIdlWwMAVw6IiCVzgMLMRkwrRCQ5T46t+FzoH4TPAc6Hx3zCm7DRs/xilOzgf4V5phlj0tpW79ZdPaGVxfLcnA19ULAde/ZrlPrdXsB5aQssU3HKScuf9eiP5arEOhgXIh23TSd/EuqAD2iwr6RKgRbPK2LgN7/hN4reGJL5FZH3KsyO0MvhLZE3HO6b2hyBERddQyrFL2IwbOEBbuvVadfWfC53YOuQpW4KP84jNcuuzo7m5Pk9DjEcysQAzOxgInqEMQLpYlcwecxU3GAAcjPx7dWiPT/0xgZK3foIhvSOcccMQRNpXcgFkwOu9FYShxgCynb8FMzI1V5ygcmf0iUofCs1FeL3DNW9mZtxHCq0r+ebYmGQblGuA11kGl4= # DOCKER_PASS_crops
+        - secure: "nxP4M0TiPkUwtlgEGhutaK/EXZJPIOXmw0R9BQsVPogQR7rTe060J1RqZX3t5KFqrwsyEOdIU5z2cFDe/CcvcCzdx9/AU5HcvCnCBNlFHWHlc18B92gTOohM7Ewx0IQtl2KbHLqeP5ejpcHPvTG+Su26h4yZcMqdIdKR9/PGWBgE/67TWqNmOTTeDv5lOSJj5kUt4bOTmKWUGMFW/8SbOnDPDF9iTzPWCWIhoq3ET5KaUw/jlF4xEJA3CVNqiBaY8CKhH+zmFw/oANqN/z61Jl1+goBoV3MQ0DP9LENMp5uASENACbAsOAflbgdL6WiURkcRcret/sHsWMo2fo7D8mqHBii6oXbPu1o/D7rIId3FneOoX+o1xdCFWQaQn9k3WULc9yYGT/xu+gfCIUvAAteXMSAVYIA3PXpZojrcnLNhkYr8T5+VNe2szJd8fs2/DPXbHESslaTRWLWdw2tyYvwtS9kwT4QzHPerRHwOScWEJ3kbyn+Y/zjEeswsuIOvaisKf2GtwRO1PO80dx0J5tNUd4hfKTppW4N/lcjMboIQJObg8aHjKxkzzWRTJkf7evLPIpAJXrjoQIdwu7SpXhahCuR99c7lP50SIyjHRcwsB1T5RgzcrI4+/FO1+4IfbaI059TatQSxrUkm9o8VI1gqAUz8yjPZmGusmUjjZl4=" # DOCKER_EMAIL_crops
+        - secure: "UgwqADtuLrX8AxzP1aHBmk8DkC8m9h49KsKlduaC8pJZtt7Ftmv+/d6dz+SgK5qZFLdnkujv46jMdafRfAujRIApse3x8ADUHdAb0HEapwS7phBYAS37/3dg4KEdFlAt45EhaY6bLU3SSS27SVnrhly5egMH3BnGR4eOQXtd1XjQeXycncV6MjlXYGIjRNkFRjQu4De+biRmBDilpVFnW1XaKszagxteBOFcRwU9GSfSyWNLb3GNnTB76AKTGbpvbhZ5JB5z0Py3xrnxxLAxnFg3+e4An4tRbU4jMvLvzrZg4UpqHIFEl33s5P6zQuNRVmsp3yXxsAlMc/3XeDr8RzmFbrxFO7EwwztPv4aQ1Uqn79HPJSRhrIz+U5T/QqnfLELMCxXXA6jM9JT31ThGK9iGEJ9BK/eMzRCGrLtmpGxbaiBrdU48RAmgcupRS3WRxbFrslnKUjnDv3MHNtBIqX8DsrFKQ6N584XhmcVjrUOtMJFKOZ3iS5+4UbiI4aE5cPrG5LDZ+04kQnrq+WEdOIYd4PzdWt+JC1HSfJLo2/0UDZAedGMo/OG2bBXFXVNNbt3UGXpmaE9DPLwLh2z97mQ+CSt8wQDuQUD8GuL8SJz77gpeOGHnFbOuVbhtgRuXMAZBCl1VESVVPRWKH6f9Hlt43kEg3QUJU3GKYo+ArAI=" # DOCKER_PASS_crops
 
 compiler:
   - gcc
@@ -44,10 +45,10 @@ script:
   - ./scripts/build_containers.sdk
   - docker images
   - python tests.py
-
+  - ./scripts/pushToDockerhub.sh
 
 after_success:
-  - ./base/scripts/pushToDockerhub.sh
+  - echo "after sucess placeholder"
 
 
 
