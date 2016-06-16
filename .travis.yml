@@ -15,8 +15,9 @@ env:
         - CROPS_RELEASE=latest
         - CODI_ADDR=localhost
         - CODI_PORT=10000
-        - secure: u6hdHQXI2rBjVSXoZ+l2drqxdMCPVcV1GjBK+Vnn3NKfCDyxaEVLs9jUrv3Vj7GMbA3lEqnAAHyGNc9StSj6kjiGynPOB5Odmgiw0JfoT1Uf2TLbK1KTJqKBgcUXnKXENaUo6NMkCbJGMGt3/cSrdSbeGbIcCyAXngNPIYc9gCkdtFlxUtgMHsDGbc4NnmOSRdRR5aXmfoU05Mx5UfAfqe5jIZEf34FO19dPTDL1iYAxpSca/FiImX/AWzwZ0aC5VttdSxUHitIbNkfBjcGLMLiGuApmmiNxbgRhZWXprQmc/SfhuYEJtInhRHSI1JyQRlAtnBbjrZvVmRjztMf32QtVamgko0zMOZwQmKyAUnJaRFYCt9uiQOK1sMlyvQxX0w5An76aHJLC9fqKjLs7LQmUcO+X2AYPlEz4zFMPHBSnmktqjqhfk/gt45BPJUlCOLHDQxoGUULkuEhVIqlSBRdmAyRWBwbnukMailFJQ708zfABRutqX5Vwq+KlRJR0oc9OujsYRv5/ozs/HSuAaX/zSEBn0hdyEafou1MyJ5JkLtq5FMNwC0WWtNtr8msJFLD3aeJgRzGjjyGd2t9Gab3husKqwc9OPU1biwteZOpWzISt/+HC0ZxlFug7WIcnnoBkNGHXNV/5zqgXj3fgQT4ZYMOEglltlorThpHsckc= # DOCKER_EMAIL_crops
-        - secure: lhlWLS6F8teB9QQDdByhgMYnzGol4SGFrdBG7VXA2ED4eb1TLtMqrSsNNN+IpAtJy6Wnalp9WY8gtsnTd6L8grc9OfrjMALHvfc9tx6+/jaO/PSx7fm4JUrfYTKXd5VwmuL8q6W2Vdf+fqLJwlrLHpfcYNEDP3YHfn3nyi48URnJn0vPgVVZpnQdKgM97S3vPHbEQ7ZZcs7s/WWKRKo03S0nqfGXPEVUN7r83AuOhX/V8k94V8H71HgQpF/QAhBEtrw+u7DuIu37oobGr4o8KOsfo5C+O1LIaWFietqgBc9oaIdlWwMAVw6IiCVzgMLMRkwrRCQ5T46t+FzoH4TPAc6Hx3zCm7DRs/xilOzgf4V5phlj0tpW79ZdPaGVxfLcnA19ULAde/ZrlPrdXsB5aQssU3HKScuf9eiP5arEOhgXIh23TSd/EuqAD2iwr6RKgRbPK2LgN7/hN4reGJL5FZH3KsyO0MvhLZE3HO6b2hyBERddQyrFL2IwbOEBbuvVadfWfC53YOuQpW4KP84jNcuuzo7m5Pk9DjEcysQAzOxgInqEMQLpYlcwecxU3GAAcjPx7dWiPT/0xgZK3foIhvSOcccMQRNpXcgFkwOu9FYShxgCynb8FMzI1V5ygcmf0iUofCs1FeL3DNW9mZtxHCq0r+ebYmGQblGuA11kGl4= # DOCKER_PASS_crops
+        - secure: chN7ohOONiBc6Tv8sd/qDZMzC0NuOnAOMz8jwRLk6YR4cskEuBggzN0GuvJHJTqBWDHUyWOno4v09L4yGzyOI8tqyu9ZbdIYLbwGefDV5DcJ9qy7jof6o30KtPoss5S0lHdziMS6B5w0VrzhfO43MqdvkBY5PLm/B05rC9TKuEuH7yBEHYJmf8cJFa/Ef3w5m6CyqVwa931rTLbL10XdW38VybEQ6z/98ZUqnCHsel937m/WayxE+Hek9anIcDKFnoXiX6RrFvQfdhzHRZQi1AgIK7IEPfVeugpj89+q9dm+yw/Bbm5BeMw1nPTlMLwbanNQp3uu1djJbj7eqg+GaXkchzDjfB/+O4qjrH1TTKRwMvZ6V8NOjC1aFm29QCH4c4yIJhaVDke5963fPpEASj9ZZ3L2j+ZhHW9RRauc9hBJXZfaN9gbiYGonaRRR1bEaPnap+b9vrTgiMMLXc3XS7tsVVtriAhRnao2zRAcNdns/fDh52y4peDL+pXOt5AjuN3Zef35i+/l1HnSMhvWEcHG7QIvy3EjJ1klND3Vyqz4nRVd7mJdTXI/lsp34pfsDzGM3xWYOq6PhQ9FzCTR6XkNVt+Jyhq+qfd/DRXi0TZmZQA6xCfYEVZnA0VFld4CF+YhiPCHFUk0KwRAI1aUyrEqCphKcVgjNRWT94p2bPM=   # DOCKER_EMAIL_bavery
+        - secure: POMpze/nSxTxbMsKvOvXIVhppO01NXwFI95dZLEvlND0afP+rmohBCzFhKjhA6Irpxqf36vQ/2Qn/mCMU5XsMrer+KUmPsu+DOlD+iYesU6WNrnx/rydgTQ1KZxLRIZvGEoKSUd7NuX0XT3EXsfbuGEIIRceb/6i7EsDzyvNB5LbyhtRfe9bvP8590+R0w5hgDUuD7iwMmZpPATpQInDLf4trOfxDeB9j4RkWDCqlW40Pwjj0Nf/3EaL8HWMEevvwc6KrltuimP21OJCXEuwlCM8rZnNHBKgFw260QfwP2syJylqy8YXXI3luoXJazwE8HZrHQ+ue3LBULWQM3efamVffMLzAMpz30AYxHHprmYkn6FHsP5rqU6MzSc039q+CHFoAB9uEd3WqwR7beiwzL71H70k2xKU9IdM8DtzF+AP7/51J2d5Ev49Cz+EPJu843g5sJjiSd+ebsqC/MlRRmgstE+fzGMyaAoP2E2PjMS5El9W7ffPWow4lwR1HVe7V2IQWym2YECEhIgEfZmUzUxDTB2PeXucrja6EPtZhcLI13YMT5AgvT472Y5mpUBz85S9+WYjxuMs0Ick3d+QzzHpvjQ5Ebb9SDHGl4rlxOxkQJ6zVpwePeBKlYoJne8CbYfmFQmaUA2LG32RqcNuySkXcJM/YC2uVF/bxYVXgms= # DOCKER_PASS_bavery
+
 
 compiler:
   - gcc
@@ -25,10 +26,10 @@ compiler:
 before_install:
   # list docker-engine versions
   - apt-cache madison docker-engine
+  # upgrade docker-engine to specific version
+  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION} net-tools nmap wget
   - docker pull crops/codi:latest
 
-  # upgrade docker-engine to specific version
-  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
 install:
   - pip install requests
 
@@ -42,12 +43,14 @@ script:
   - source ./base/scripts/setDockerhubRepo.sh
   - echo "Building SDK Containers"
   - ./scripts/build_containers.sdk
+  - ./scripts/startContainers.sh
+  - docker ps
   - docker images
   - python tests.py
-
+  - ./base/scripts/pushToDockerhub.sh
 
 after_success:
-  - ./base/scripts/pushToDockerhub.sh
+  - echo "after_success placeholder"
 
 
 
