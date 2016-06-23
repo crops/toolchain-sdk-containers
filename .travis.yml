@@ -10,8 +10,7 @@ services:
 env:
     global:
         - DOCKER_VERSION=1.10.1-0~trusty
-        - TARGETSREAL="aarch64 armv5e  mips64 core2-64 i586"
-        - TARGETS="i586"
+        - TARGETS="aarch64 armv5e  mips64 core2-64 i586"
         - YP_RELEASE=2.1
         - CROPS_RELEASE=latest
         - CODI_ADDR=localhost
@@ -51,10 +50,9 @@ script:
   - docker images
   - python tests.py
   - docker rmi -f crops/toolchain-base  crops/codi
-  - ./base/scripts/pushToDockerhub.sh
 
 after_success:
-  - echo "after_success placeholder"
+  - ./base/scripts/pushToDockerhub.sh
 
 
 
